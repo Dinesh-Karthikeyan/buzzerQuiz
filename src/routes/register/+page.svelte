@@ -3,10 +3,7 @@
 		<h1>Register</h1>
 		<form action="?/register" method="post">
 			<label for="name">
-				<input type="text" name="name" id="name" placeholder="Enter your name" />
-			</label>
-			<label for="email">
-				<input type="email" name="email" id="email" placeholder="Enter your email" />
+				<input type="text" name="team_name" id="name" placeholder="Enter your team name" />
 			</label>
 			<label for="password">
 				<input type="password" name="password" id="password" placeholder="Enter your password" />
@@ -19,20 +16,6 @@
 					placeholder="Confirm your password"
 				/>
 			</label>
-			<!-- <select name="role" id="role">
-				<option value="student">Student</option>
-				<option value="teacher">Teacher</option>
-			</select> -->
-			<div class="radios">
-				<label for="student">
-					<input type="radio" name="role" id="student" value="student" checked/>
-					Student
-				</label>
-				<label for="teacher">
-					<input type="radio" name="role" id="teacher" value="teacher" />
-					Teacher
-				</label>
-			</div>
 			<button type="submit">Submit</button>
 		</form>
 	</main>
