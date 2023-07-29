@@ -2,8 +2,8 @@
 	<main>
 		<h1>Login</h1>
 		<form action="?/login" method="post">
-			<label for="email">
-				<input type="email" name="email" id="email" placeholder="Enter your email" />
+			<label for="team_name">
+				<input type="text" name="team_name" id="team_name" placeholder="Enter your team name" />
 			</label>
 			<label for="password">
 				<input type="password" name="password" id="password" placeholder="Enter your password" />
