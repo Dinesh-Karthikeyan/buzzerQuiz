@@ -1,6 +1,8 @@
 package database
 
 import (
+	"backend/models"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -16,5 +18,7 @@ func Connect() {
 	}
 
 	DB = connection
+
+	connection.AutoMigrate(&models.User{})
 	// conn, err := gorm
 }
