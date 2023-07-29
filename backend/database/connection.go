@@ -1,7 +1,7 @@
 package database
 
 import (
-	"gorm.io/drivers/mysql"
+	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
