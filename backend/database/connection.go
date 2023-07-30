@@ -20,5 +20,6 @@ func Connect() {
 	DB = connection
 
 	connection.AutoMigrate(&models.User{})
+	connection.AutoMigrate(&models.Question{})
 	// conn, err := gorm
 }
