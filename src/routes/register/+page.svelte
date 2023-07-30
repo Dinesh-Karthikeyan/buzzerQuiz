@@ -1,27 +1,3 @@
-<script>
-	let teamname = ""
-	let password = ""
-	let confPass = ""
-	
-	async function hi() {
-		if (password!=confPass) alert("Both password and confirm password field must match")
-		try {
-			const response = await fetch("http://127.0.0.1:8000/register",  {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify({
-						team_name: teamname,
-						password: password
-					})
-				})
-		} catch (err) {
-			
-		}
-	}
-</script>
-
 <div class="authContainer">
 	<main>
 		<h1>Register</h1>
@@ -41,7 +17,7 @@
 					bind:value={confPass}
 				/>
 			</label>
-			<button type="submit" on:click={hi}>Submit</button>
+			<button type="submit" >Submit</button>
 		</form>
 	</main>
 </div>
