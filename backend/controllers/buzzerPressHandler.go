@@ -10,29 +10,8 @@ var question models.Question
 var buzzerQueue = make(chan *fiber.Ctx, 10)
 var counter int = 0
 
-// to present the first three users the question
-func processRequest(c *fiber.Ctx) error {
-	return c.JSON(fiber.Map{
-		"question": question.Question,
-		"id":       question.ID,
-		"A":        question.A,
-		"B":        question.B,
-		"C":        question.C,
-		"D":        question.D,
-	})
-}
-
-// to get the first three users
-func processBuzzerPress(queue chan *fiber.Ctx, count *int) {
-	if *count < 3 {
-		c := <-queue
-		processRequest(c)
-		*count = *count + 1
-	}
-}
-
 // to process and queue the buzzer request
-func buzzerPressHandler(c *fiber.Ctx) error {
+func BuzzerPressHandler(c *fiber.Ctx) error {
 	// Add the request to the buzzerQueue
 	go processBuzzerPress(buzzerQueue, &counter)
 	buzzerQueue <- c
