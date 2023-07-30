@@ -3,6 +3,7 @@ package controllers
 import (
 	"backend/database"
 	"backend/models"
+	"fmt"
 	"strconv"
 	"time"
 
@@ -18,14 +19,16 @@ func Register(c *fiber.Ctx) error {
 	if err := c.BodyParser(&data); err != nil {
 		return err
 	}
+	fmt.Print(data)
 
 	//checking if the user is a new user
 	var userOne models.User
-	result := database.DB.Where("team_name=?", data["team_name"]).First(&userOne).Error
-	if result != nil {
-
+	err := database.DB.Where("team_name=?", data["team_name"]).First(&userOne).Error
+	if err != nil {
+		fmt.Print()
 	}
-	if userOne.ID == 0 {
+
+	if userOne.ID != 0 {
 		c.Status(fiber.StatusUnauthorized)
 		return c.JSON(fiber.Map{
 			"message": "A user with the same team name exists",
