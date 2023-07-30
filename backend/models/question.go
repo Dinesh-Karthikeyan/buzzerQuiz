@@ -9,4 +9,5 @@ type Question struct {
 	D        string `json:"d"`
 	Answer   string `json:"answer"`
 	Reward   int64  `json:"reward"`
+	Category string `json:"category"`
 }
