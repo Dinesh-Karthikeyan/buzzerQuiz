@@ -25,7 +25,7 @@
 <div class="authContainer">
 	<main>
 		<h1>Register</h1>
-		<form method="post">
+		<form >
 			<label for="name">
 				<input type="text" name="team_name" id="name" placeholder="Enter your team name"  bind:value={teamname}/>
 			</label>
@@ -41,7 +41,7 @@
 					bind:value={confPass}
 				/>
 			</label>
-			<button type="submit">Submit</button>
+			<button type="submit" on:click={hi}>Submit</button>
 		</form>
 	</main>
 </div>
