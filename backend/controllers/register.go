@@ -21,7 +21,10 @@ func Register(c *fiber.Ctx) error {
 
 	//checking if the user is a new user
 	var userOne models.User
-	database.DB.Where("team_name=?", data["team_name"]).First(&userOne)
+	result := database.DB.Where("team_name=?", data["team_name"]).First(&userOne)
+	if result.Error != nil {
+
+	}
 	if userOne.ID == 0 {
 		c.Status(fiber.StatusUnauthorized)
 		return c.JSON(fiber.Map{
