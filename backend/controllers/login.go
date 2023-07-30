@@ -32,6 +32,14 @@ func Login(c *fiber.Ctx) error {
 		})
 	}
 
+	var jwtToken = c.Cookies("jwt")
+	if jwtToken != user.Jwt && jwtToken != "" {
+		c.Status(fiber.StatusUnauthorized)
+		return c.JSON(fiber.Map{
+			"message": "dual login not permitted",
+		})
+	}
+
 	return c.JSON(fiber.Map{
 		"message": "Login successfull",
 	})
