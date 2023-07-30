@@ -111,14 +111,5 @@
 	form label input:focus {
 		outline: none;
 	}
-	.radios {
-		display: flex;
-		justify-content: space-around;
-		width: 100%;
-	}
-	.radios label {
-		display: flex;
-		padding: 1em;
-		cursor: pointer;
-	}
+
 </style>
