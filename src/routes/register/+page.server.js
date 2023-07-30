@@ -1,4 +1,7 @@
-import { Cookies } from "@sveltejs/kit"
-if (Cookies.get("jwt") != "") {
-    throw new redirect(300, "/game")
+import { redirect } from '@sveltejs/kit'
+
+export const load = async({cookies}) => {
+    if (cookies.get("jwt") != "") {
+        throw new redirect(300, "/game")
+    }
 }
