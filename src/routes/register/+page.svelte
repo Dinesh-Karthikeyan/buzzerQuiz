@@ -1,19 +1,12 @@
-<script>
-	let teamname = ""
-	let password = ""
-	let confPass = ""
-	
-</script>
-
 <div class="authContainer">
 	<main>
 		<h1>Register</h1>
 		<form method="post" action="?/register">
 			<label for="name">
-				<input type="text" name="team_name" id="name" placeholder="Enter your team name"  bind:value={teamname}/>
+				<input type="text" name="team_name" id="name" placeholder="Enter your team name" />
 			</label>
 			<label for="password">
-				<input type="password" name="password" id="password" placeholder="Enter your password" bind:value={password}/>
+				<input type="password" name="password" id="password" placeholder="Enter your password" />
 			</label>
 			<label for="passwordConfirm">
 				<input
@@ -21,7 +14,7 @@
 					name="passwordConfirm"
 					id="passwordConfirm"
 					placeholder="Confirm your password"
-					bind:value={confPass}
+					
 				/>
 			</label>
 			<button type="submit" >Submit</button>
