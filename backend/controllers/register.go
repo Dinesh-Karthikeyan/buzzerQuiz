@@ -64,7 +64,7 @@ func Register(c *fiber.Ctx) error {
 	c.Cookie(&cookie) // prepared and sent a cookie to the newly registered user
 
 	user.Jwt = ss
-	database.DB.Save(&user)
+	database.DB.Save(&user) // updated the user's jwt field in the database
 
 	return c.JSON(fiber.Map{
 		"message": "registration successful",
