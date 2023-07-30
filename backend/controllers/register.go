@@ -19,6 +19,16 @@ func Register(c *fiber.Ctx) error {
 		return err
 	}
 
+	//checking if the user is a new user
+	var userOne models.User
+	database.DB.Where("team_name=?", data["team_name"]).First(&userOne)
+	if userOne.ID == 0 {
+		c.Status(fiber.StatusUnauthorized)
+		return c.JSON(fiber.Map{
+			"message": "A user with the same team name exists",
+		})
+	}
+
 	password, err := bcrypt.GenerateFromPassword([]byte(data["password"]), 14)
 	if err != nil {
 		c.Status(fiber.StatusInternalServerError)
