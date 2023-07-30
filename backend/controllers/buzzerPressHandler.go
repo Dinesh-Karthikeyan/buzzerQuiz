@@ -11,7 +11,7 @@ var buzzerQueue = make(chan *fiber.Ctx, 10)
 var counter int = 0
 
 // to process and queue the buzzer request
-func buzzerPressHandler(c *fiber.Ctx) error {
+func BuzzerPressHandler(c *fiber.Ctx) error {
 	// Add the request to the buzzerQueue
 	go processBuzzerPress(buzzerQueue, &counter)
 	buzzerQueue <- c
